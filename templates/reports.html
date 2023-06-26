@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}
+    HELLO!
+{% endblock %}
+{% block content %}
+<div style="padding: 20px">
+    <h1>Reports</h1>
+    <style>
+        td, th{
+            padding: 10px;
+        }
+        th{
+            text-align: left;
+        }
+        table, td, th {
+            border: 1px solid #ccc;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .query{
+            padding: 5px;
+        }
+        input[type="checkbox"], input[type="button"]{
+            cursor: pointer;
+        }
+        .controls > div{
+            padding: 10px;
+        }
+    </style>
+    <div class="controls">
+        <div>
+            <input checked="checked" class="queries" type="checkbox" /> Show/Hide Queries
+        </div>
+        <div>
+            <input class="tables" type="checkbox" /> Show/Hide All Database Data
+        </div>
+    </div>
+    <div class="table-data-container" style="display:none">
+        <h3>Tables Data as it is</h3>
+        {% for table_data in context.tables %}
+            <div class="table-item" style="padding: 10px">
+                <h4 style="color:green">{{table_data.name}}</h4>
+                <table>
+                    <tr>
+                        {% for col in table_data.columns %}
+                        <th>{{col}}</th>
+                        {% endfor %}
+                    </tr>
+                    {% for row in table_data.data %}
+                    <tr>
+                        {% for cell in row %}
+                        <td>{{cell}}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        {% endfor %}
+    </div>
+    {% for option in context.answers %}
+        <div class="answers-container">
+        <div class="answer-item" style="padding: 10px">
+            <h4 style="color:green">{{option.serial}}. {{option.q}}</h4>
+            <div class="query"> <pre>{{option.ans}}</pre></div>
+            <table>
+                <tr>
+                    {% for col in option.columns %}
+                    <th>{{col}}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in option.data %}
+                <tr>
+                    {% for cell in row %}
+                    <td>{{cell}}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        </div>
+    {% endfor %}
+
+    <script>
+        (function(){
+            function do_toggling(toggler, to_toggle){
+                let elm = document.querySelector(toggler);
+                elm.onclick = function(){
+                    let queries = document.querySelectorAll(to_toggle);
+                    if(queries[0].style.display == 'none'){
+                        for(let item of queries) {
+                            item.style.display = 'block';
+                        }
+                    }
+                    else{
+                        for(let item of queries) {
+                            item.style.display = 'none';
+                        }
+                    }
+                }
+            }
+            do_toggling('input.queries', '.answer-item .query');
+            do_toggling('input.tables', '.table-data-container');
+
+        })();
+    </script>
+</div>
+{% endblock %}

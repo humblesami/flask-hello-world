@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}
+    HELLO!
+{% endblock %}
+{% block content %}
+<h1>
+    Hello {{ sam_context.a }} - {{ sam_context.b.c }}
+</h1>
+{% endblock %}

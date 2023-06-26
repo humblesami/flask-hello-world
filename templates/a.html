@@ -1,0 +1,1748 @@
+<html>
+
+    <head>
+        <title>
+
+            HELLO!
+
+        </title>
+    </head>
+
+    <body>
+
+        <div style="padding: 20px">
+            <h1>Reports</h1>
+            <style>
+                td,
+                th {
+                    padding: 10px;
+                }
+
+                th {
+                    text-align: left;
+                }
+
+                table,
+                td,
+                th {
+                    border: 1px solid #ccc;
+                }
+
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+
+                .query {
+                    padding: 5px;
+                }
+
+                input[type="checkbox"],
+                input[type="button"] {
+                    cursor: pointer;
+                }
+
+                .controls>div {
+                    padding: 10px;
+                }
+            </style>
+            <div class="controls">
+                <div>
+                    <input checked="checked" class="queries" type="checkbox"> Show/Hide Queries
+                </div>
+                <div>
+                    <input class="tables" type="checkbox"> Show/Hide All Database Data
+                </div>
+            </div>
+            <div class="table-data-container" style="display:none">
+                <h3>Tables Data as it is</h3>
+
+                <div class="table-item" style="padding: 10px">
+                    <h4 style="color:green">Bank</h4>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>BankId</th>
+
+                                <th>BankName</th>
+
+                                <th>HQAddress</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>1</td>
+
+                                <td>MCB</td>
+
+                                <td>123 Main Street</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>2</td>
+
+                                <td>JPMorgan Chase</td>
+
+                                <td>456 Elm Street</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>3</td>
+
+                                <td>Al-Habib</td>
+
+                                <td>789 Oak Street</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>4</td>
+
+                                <td>Citibank</td>
+
+                                <td>987 Maple Avenue</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>5</td>
+
+                                <td>HSBC</td>
+
+                                <td>654 Pine Road</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-item" style="padding: 10px">
+                    <h4 style="color:green">BankBranch</h4>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>BranchId</th>
+
+                                <th>BranchName</th>
+
+                                <th>BranchAddress</th>
+
+                                <th>PhoneNo</th>
+
+                                <th>BankId</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>1</td>
+
+                                <td>Downtown Branch</td>
+
+                                <td>100 Market Street</td>
+
+                                <td>123-456-7890</td>
+
+                                <td>1</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>2</td>
+
+                                <td>Uptown Branch</td>
+
+                                <td>200 Broadway Avenue</td>
+
+                                <td>987-654-3210</td>
+
+                                <td>1</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>3</td>
+
+                                <td>Midtown Branch</td>
+
+                                <td>300 Main Boulevard</td>
+
+                                <td>555-123-4567</td>
+
+                                <td>2</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>4</td>
+
+                                <td>Westside Branch</td>
+
+                                <td>400 Elm Drive</td>
+
+                                <td>111-222-3333</td>
+
+                                <td>3</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>5</td>
+
+                                <td>Eastside Branch</td>
+
+                                <td>500 Oak Lane</td>
+
+                                <td>999-888-7777</td>
+
+                                <td>3</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-item" style="padding: 10px">
+                    <h4 style="color:green">LoanAccount</h4>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>LoanAccountNo</th>
+
+                                <th>OpeningBalance</th>
+
+                                <th>AccountType</th>
+
+                                <th>OpeningDate</th>
+
+                                <th>BranchId</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>1</td>
+
+                                <td>9000</td>
+
+                                <td>Personal</td>
+
+                                <td>2021-01-01</td>
+
+                                <td>1</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>2</td>
+
+                                <td>20000</td>
+
+                                <td>Business</td>
+
+                                <td>2023-02-01</td>
+
+                                <td>2</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>3</td>
+
+                                <td>8000</td>
+
+                                <td>Mortgage</td>
+
+                                <td>2021-03-01</td>
+
+                                <td>3</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>4</td>
+
+                                <td>40000</td>
+
+                                <td>Personal</td>
+
+                                <td>2023-04-01</td>
+
+                                <td>4</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>5</td>
+
+                                <td>50000</td>
+
+                                <td>Business</td>
+
+                                <td>2023-05-01</td>
+
+                                <td>5</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-item" style="padding: 10px">
+                    <h4 style="color:green">SavingAccount</h4>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>SavingAccountNo</th>
+
+                                <th>OpeningBalance</th>
+
+                                <th>AccountType</th>
+
+                                <th>OpeningDate</th>
+
+                                <th>BranchId</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>1</td>
+
+                                <td>5000</td>
+
+                                <td>Personal</td>
+
+                                <td>2023-01-01</td>
+
+                                <td>1</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>2</td>
+
+                                <td>10000</td>
+
+                                <td>Business</td>
+
+                                <td>2021-02-01</td>
+
+                                <td>2</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>3</td>
+
+                                <td>15000</td>
+
+                                <td>Personal</td>
+
+                                <td>2021-03-01</td>
+
+                                <td>3</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>4</td>
+
+                                <td>20000</td>
+
+                                <td>Business</td>
+
+                                <td>2023-04-01</td>
+
+                                <td>4</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>5</td>
+
+                                <td>25000</td>
+
+                                <td>Personal</td>
+
+                                <td>2023-05-01</td>
+
+                                <td>5</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-item" style="padding: 10px">
+                    <h4 style="color:green">LoanAccount</h4>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>LoanAccountNo</th>
+
+                                <th>OpeningBalance</th>
+
+                                <th>AccountType</th>
+
+                                <th>OpeningDate</th>
+
+                                <th>BranchId</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>1</td>
+
+                                <td>9000</td>
+
+                                <td>Personal</td>
+
+                                <td>2021-01-01</td>
+
+                                <td>1</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>2</td>
+
+                                <td>20000</td>
+
+                                <td>Business</td>
+
+                                <td>2023-02-01</td>
+
+                                <td>2</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>3</td>
+
+                                <td>8000</td>
+
+                                <td>Mortgage</td>
+
+                                <td>2021-03-01</td>
+
+                                <td>3</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>4</td>
+
+                                <td>40000</td>
+
+                                <td>Personal</td>
+
+                                <td>2023-04-01</td>
+
+                                <td>4</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>5</td>
+
+                                <td>50000</td>
+
+                                <td>Business</td>
+
+                                <td>2023-05-01</td>
+
+                                <td>5</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-item" style="padding: 10px">
+                    <h4 style="color:green">SavingAccount</h4>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>SavingAccountNo</th>
+
+                                <th>OpeningBalance</th>
+
+                                <th>AccountType</th>
+
+                                <th>OpeningDate</th>
+
+                                <th>BranchId</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>1</td>
+
+                                <td>5000</td>
+
+                                <td>Personal</td>
+
+                                <td>2023-01-01</td>
+
+                                <td>1</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>2</td>
+
+                                <td>10000</td>
+
+                                <td>Business</td>
+
+                                <td>2021-02-01</td>
+
+                                <td>2</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>3</td>
+
+                                <td>15000</td>
+
+                                <td>Personal</td>
+
+                                <td>2021-03-01</td>
+
+                                <td>3</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>4</td>
+
+                                <td>20000</td>
+
+                                <td>Business</td>
+
+                                <td>2023-04-01</td>
+
+                                <td>4</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>5</td>
+
+                                <td>25000</td>
+
+                                <td>Personal</td>
+
+                                <td>2023-05-01</td>
+
+                                <td>5</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-item" style="padding: 10px">
+                    <h4 style="color:green">LoanTransaction</h4>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>LoanTxId</th>
+
+                                <th>LoantxDate</th>
+
+                                <th>LoanTxType</th>
+
+                                <th>LoanTxAmount</th>
+
+                                <th>Comments</th>
+
+                                <th>LoanAccountNo</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>1</td>
+
+                                <td>2023-01-10</td>
+
+                                <td>CR</td>
+
+                                <td>5000.0</td>
+
+                                <td>Loan payment received</td>
+
+                                <td>1</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>2</td>
+
+                                <td>2023-02-15</td>
+
+                                <td>DB</td>
+
+                                <td>10000.0</td>
+
+                                <td>Loan installment</td>
+
+                                <td>2</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>3</td>
+
+                                <td>2023-03-20</td>
+
+                                <td>CR</td>
+
+                                <td>2000.0</td>
+
+                                <td>Extra payment</td>
+
+                                <td>3</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>4</td>
+
+                                <td>2023-04-25</td>
+
+                                <td>DB</td>
+
+                                <td>15000.0</td>
+
+                                <td>Loan repayment</td>
+
+                                <td>4</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>5</td>
+
+                                <td>2023-05-30</td>
+
+                                <td>CR</td>
+
+                                <td>10000.0</td>
+
+                                <td>Partial payment</td>
+
+                                <td>5</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-item" style="padding: 10px">
+                    <h4 style="color:green">SavingTransaction</h4>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>SavingTxId</th>
+
+                                <th>SavingtxDate</th>
+
+                                <th>SavingTxType</th>
+
+                                <th>SavingTxAmount</th>
+
+                                <th>Comments</th>
+
+                                <th>SavingAccountNo</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>1</td>
+
+                                <td>2023-01-10</td>
+
+                                <td>CR</td>
+
+                                <td>1000.0</td>
+
+                                <td>Deposit</td>
+
+                                <td>1</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>2</td>
+
+                                <td>2023-02-15</td>
+
+                                <td>DB</td>
+
+                                <td>2000.0</td>
+
+                                <td>Withdrawal</td>
+
+                                <td>2</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>3</td>
+
+                                <td>2023-03-20</td>
+
+                                <td>CR</td>
+
+                                <td>3000.0</td>
+
+                                <td>Interest credit</td>
+
+                                <td>3</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>4</td>
+
+                                <td>2023-04-25</td>
+
+                                <td>DB</td>
+
+                                <td>4000.0</td>
+
+                                <td>Withdrawal</td>
+
+                                <td>4</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>5</td>
+
+                                <td>2023-05-30</td>
+
+                                <td>CR</td>
+
+                                <td>5000.0</td>
+
+                                <td>Deposit</td>
+
+                                <td>4</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-item" style="padding: 10px">
+                    <h4 style="color:green">CustomerLoanAccount</h4>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>Id</th>
+
+                                <th>AccountNo</th>
+
+                                <th>CustomerId</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>1</td>
+
+                                <td>1</td>
+
+                                <td>1</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>2</td>
+
+                                <td>2</td>
+
+                                <td>2</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>3</td>
+
+                                <td>3</td>
+
+                                <td>3</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>7</td>
+
+                                <td>3</td>
+
+                                <td>4</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>9</td>
+
+                                <td>4</td>
+
+                                <td>1</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>4</td>
+
+                                <td>4</td>
+
+                                <td>4</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>5</td>
+
+                                <td>5</td>
+
+                                <td>5</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>6</td>
+
+                                <td>5</td>
+
+                                <td>6</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-item" style="padding: 10px">
+                    <h4 style="color:green">CustomerSavingAccount</h4>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>Id</th>
+
+                                <th>AccountNo</th>
+
+                                <th>CustomerId</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>1</td>
+
+                                <td>1</td>
+
+                                <td>1</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>2</td>
+
+                                <td>2</td>
+
+                                <td>2</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>3</td>
+
+                                <td>3</td>
+
+                                <td>3</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>4</td>
+
+                                <td>4</td>
+
+                                <td>4</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>5</td>
+
+                                <td>5</td>
+
+                                <td>5</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-item" style="padding: 10px">
+                    <h4 style="color:green">Customer</h4>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>CustomerId</th>
+
+                                <th>FName</th>
+
+                                <th>LName</th>
+
+                                <th>Address</th>
+
+                                <th>City</th>
+
+                                <th>Phone</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>1</td>
+
+                                <td>John</td>
+
+                                <td>Doe</td>
+
+                                <td>1234 Main Street</td>
+
+                                <td>Karachi</td>
+
+                                <td>555-123-4567</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>2</td>
+
+                                <td>Jane</td>
+
+                                <td>Smith</td>
+
+                                <td>5678 Elm Avenue</td>
+
+                                <td>Karachi</td>
+
+                                <td>111-222-3333</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>3</td>
+
+                                <td>Michael</td>
+
+                                <td>Johnson</td>
+
+                                <td>9012 Oak Road</td>
+
+                                <td>Lahore</td>
+
+                                <td>999-888-7777</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>4</td>
+
+                                <td>Emily</td>
+
+                                <td>Williams</td>
+
+                                <td>3456 Maple Lane</td>
+
+                                <td>karachi</td>
+
+                                <td>123-456-7890</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>5</td>
+
+                                <td>Daniel</td>
+
+                                <td>Brown</td>
+
+                                <td>F-8</td>
+
+                                <td>Islamabad</td>
+
+                                <td>444-555-6666</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>6</td>
+
+                                <td>Abudl</td>
+
+                                <td>Khaliq</td>
+
+                                <td>Mall Road</td>
+
+                                <td>Lahore</td>
+
+                                <td>111-222-3333</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>7</td>
+
+                                <td>Taha</td>
+
+                                <td>Shah</td>
+
+                                <td>G-11</td>
+
+                                <td>Islamabad</td>
+
+                                <td>451-555-6666</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>8</td>
+
+                                <td>NoLoan</td>
+
+                                <td>Account</td>
+
+                                <td>SomeWhere</td>
+
+                                <td>TBA</td>
+
+                                <td>451-555-6666</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="answers-container">
+                <div class="answer-item" style="padding: 10px">
+                    <h4 style="color:green">a. Show the full name of the customers who hold an account In Bank
+                        'AL-Habib'</h4>
+                    <div class="query">
+                        <pre>                        select concat(FName,' ',LName) as FullName, bb.BranchId from Customer c
+                        join CustomerSavingAccount csa on csa.CustomerId=c.CustomerId
+                        join SavingAccount sa on sa.SavingAccountNo=csa.AccountNo
+                        join BankBranch bb on bb.BranchId=sa.BranchId
+                        join Bank b on b.BankId=bb.BankId
+                        WHERE b.BankName='Al-Habib'
+                        UNION
+                        select concat(FName,' ',LName) as FullName, bb.BranchId from Customer c
+                        join CustomerLoanAccount cla on cla.CustomerId=c.CustomerId
+                        join LoanAccount la on la.LoanAccountNo=cla.AccountNo
+                        join BankBranch bb on bb.BranchId=la.BranchId
+                        join Bank b on b.BankId=bb.BankId
+                        WHERE b.BankName='Al-Habib';
+                    </pre>
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>FullName</th>
+
+                                <th>BranchId</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Emily Williams</td>
+
+                                <td>4</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Daniel Brown</td>
+
+                                <td>5</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>John Doe</td>
+
+                                <td>4</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Abudl Khaliq</td>
+
+                                <td>5</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="answers-container">
+                <div class="answer-item" style="padding: 10px">
+                    <h4 style="color:green">b. Show the total saving transactions made In each bank.
+                        (Show the bank name and the no. of transactions)</h4>
+                    <div class="query">
+                        <pre>                        select BankName, count(*) as NumerOfSavingTransactions from Bank b
+                        join BankBranch bb on bb.BankId=b.BankId
+                        join SavingAccount sa on sa.BranchId=bb.BranchId
+                        join SavingTransaction st on st.SavingAccountNo=sa.SavingAccountNo
+                        GROUP by b.BankName;
+                        </pre>
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>BankName</th>
+
+                                <th>NumerOfSavingTransactions</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>MCB</td>
+
+                                <td>2</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>JPMorgan Chase</td>
+
+                                <td>1</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Al-Habib</td>
+
+                                <td>2</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="answers-container">
+                <div class="answer-item" style="padding: 10px">
+                    <h4 style="color:green">c. Show the names of the customers who opened the a saving account with
+                        maximum opening balance.</h4>
+                    <div class="query">
+                        <pre>                        select Fname, Lname, sa.OpeningBalance from Customer c
+                        join CustomerSavingAccount csa on csa.CustomerId=c.CustomerId
+                        join SavingAccount sa on sa.SavingAccountNo=csa.AccountNo
+                        ORDER by sa.OpeningBalance DESC limit 1;
+                    </pre>
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>Fname</th>
+
+                                <th>Lname</th>
+
+                                <th>OpeningBalance</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Daniel</td>
+
+                                <td>Brown</td>
+
+                                <td>25000</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="answers-container">
+                <div class="answer-item" style="padding: 10px">
+                    <h4 style="color:green">d.
+                        How many loan accounts have more than I customers associated with it.
+                    </h4>
+                    <div class="query">
+                        <pre>                        SELECT count(*) CustomerCountWithMultipleLoanAccount from
+                        (
+                            SELECT count(*),cla.CustomerId from LoanAccount la
+                            join CustomerLoanAccount cla on cla.AccountNo=la.LoanAccountNo
+                            GROUP by cla.CustomerId
+                            having count(*) &gt; 1
+                        ) tbl;
+                    </pre>
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>CustomerCountWithMultipleLoanAccount</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>2</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="answers-container">
+                <div class="answer-item" style="padding: 10px">
+                    <h4 style="color:green">e.
+                        Show the transactions of all saving accounts of MCB Bank.
+                        (You should display account details even if no transactions have been made for the said account
+                        ).
+                    </h4>
+                    <div class="query">
+                        <pre>                        SELECT sa.*, st.* from Bank b
+                        inner join BankBranch bb on bb.BankId=b.BankId
+                        inner join SavingAccount sa on sa.BranchId=bb.BranchId
+                        left outer join SavingTransaction st on st.SavingAccountNo=sa.SavingAccountNo;
+                    </pre>
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>SavingAccountNo</th>
+
+                                <th>OpeningBalance</th>
+
+                                <th>AccountType</th>
+
+                                <th>OpeningDate</th>
+
+                                <th>BranchId</th>
+
+                                <th>SavingTxId</th>
+
+                                <th>SavingtxDate</th>
+
+                                <th>SavingTxType</th>
+
+                                <th>SavingTxAmount</th>
+
+                                <th>Comments</th>
+
+                                <th>SavingAccountNo</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>1</td>
+
+                                <td>5000</td>
+
+                                <td>Personal</td>
+
+                                <td>2023-01-01</td>
+
+                                <td>1</td>
+
+                                <td>1</td>
+
+                                <td>2023-01-10</td>
+
+                                <td>CR</td>
+
+                                <td>1000.0</td>
+
+                                <td>Deposit</td>
+
+                                <td>1</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>2</td>
+
+                                <td>10000</td>
+
+                                <td>Business</td>
+
+                                <td>2021-02-01</td>
+
+                                <td>2</td>
+
+                                <td>2</td>
+
+                                <td>2023-02-15</td>
+
+                                <td>DB</td>
+
+                                <td>2000.0</td>
+
+                                <td>Withdrawal</td>
+
+                                <td>2</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>3</td>
+
+                                <td>15000</td>
+
+                                <td>Personal</td>
+
+                                <td>2021-03-01</td>
+
+                                <td>3</td>
+
+                                <td>3</td>
+
+                                <td>2023-03-20</td>
+
+                                <td>CR</td>
+
+                                <td>3000.0</td>
+
+                                <td>Interest credit</td>
+
+                                <td>3</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>4</td>
+
+                                <td>20000</td>
+
+                                <td>Business</td>
+
+                                <td>2023-04-01</td>
+
+                                <td>4</td>
+
+                                <td>4</td>
+
+                                <td>2023-04-25</td>
+
+                                <td>DB</td>
+
+                                <td>4000.0</td>
+
+                                <td>Withdrawal</td>
+
+                                <td>4</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>4</td>
+
+                                <td>20000</td>
+
+                                <td>Business</td>
+
+                                <td>2023-04-01</td>
+
+                                <td>4</td>
+
+                                <td>5</td>
+
+                                <td>2023-05-30</td>
+
+                                <td>CR</td>
+
+                                <td>5000.0</td>
+
+                                <td>Deposit</td>
+
+                                <td>4</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>5</td>
+
+                                <td>25000</td>
+
+                                <td>Personal</td>
+
+                                <td>2023-05-01</td>
+
+                                <td>5</td>
+
+                                <td>None</td>
+
+                                <td>None</td>
+
+                                <td>None</td>
+
+                                <td>None</td>
+
+                                <td>None</td>
+
+                                <td>None</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="answers-container">
+                <div class="answer-item" style="padding: 10px">
+                    <h4 style="color:green">f. Show the name of customers from Islamabad who do not have a loan account.
+                    </h4>
+                    <div class="query">
+                        <pre>                        SELECT distinct c.FName,c.LName from Customer c
+                        left join CustomerLoanAccount cla on cla.CustomerId=c.CustomerId
+                        where c.City='Islamabad' and cla.CustomerId is null;
+                    </pre>
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>FName</th>
+
+                                <th>LName</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Taha</td>
+
+                                <td>Shah</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="answers-container">
+                <div class="answer-item" style="padding: 10px">
+                    <h4 style="color:green">g. Show the accounts opened in 2021 by customers living in Karachi.</h4>
+                    <div class="query">
+                        <pre>                        SELECT 'Loan Account' as Tablename, la.LoanAccountNo as AccNo, la.OpeningDate FROM `Customer` c
+                        join CustomerLoanAccount cla on cla.CustomerId=c.CustomerId
+                        join LoanAccount la on la.LoanAccountNo=cla.AccountNo
+                        where c.City='Karachi' and year(la.OpeningDate)=2021
+
+                        Union
+
+                        SELECT 'Saving Account' as Tablename, sa.SavingAccountNo as AccNo, sa.OpeningDate FROM `Customer` c
+                        join CustomerSavingAccount csa on csa.CustomerId=c.CustomerId
+                        join SavingAccount sa on sa.SavingAccountNo=csa.AccountNo
+                        where c.City='Karachi' and year(sa.OpeningDate)=2021;
+                    </pre>
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>Tablename</th>
+
+                                <th>AccNo</th>
+
+                                <th>OpeningDate</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Loan Account</td>
+
+                                <td>1</td>
+
+                                <td>2021-01-01</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Loan Account</td>
+
+                                <td>3</td>
+
+                                <td>2021-03-01</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Saving Account</td>
+
+                                <td>2</td>
+
+                                <td>2021-02-01</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="answers-container">
+                <div class="answer-item" style="padding: 10px">
+                    <h4 style="color:green">h.
+                        Show the names of the customers from Lahore who have a loan account and opening balance
+                        less than 10K. (Use Nested Query)
+                    </h4>
+                    <div class="query">
+                        <pre>                        select FName, LName from Customer
+                        where City='Lahore' and CustomerId in
+                        (
+                            select CustomerId from CustomerLoanAccount WHERE AccountNo IN
+                            (SELECT LoanAccountNo from LoanAccount where OpeningBalance&lt;10000)
+                        );
+                    </pre>
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>FName</th>
+
+                                <th>LName</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Michael</td>
+
+                                <td>Johnson</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="answers-container">
+                <div class="answer-item" style="padding: 10px">
+                    <h4 style="color:green">i. Show the names and address of customers who have a loan account. (Use
+                        EXISTS)</h4>
+                    <div class="query">
+                        <pre>                        SELECT FName,LName from Customer
+                        WHERE EXISTS (
+                            SELECT * FROM CustomerLoanAccount
+                            WHERE Customer.CustomerId = CustomerLoanAccount.CustomerId
+                        );
+                    </pre>
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+
+                                <th>FName</th>
+
+                                <th>LName</th>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>John</td>
+
+                                <td>Doe</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Jane</td>
+
+                                <td>Smith</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Michael</td>
+
+                                <td>Johnson</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Emily</td>
+
+                                <td>Williams</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Daniel</td>
+
+                                <td>Brown</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Abudl</td>
+
+                                <td>Khaliq</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <script>
+                (function () {
+                    function do_toggling(toggler, to_toggle) {
+                        let elm = document.querySelector(toggler);
+                        elm.onclick = function () {
+                            let queries = document.querySelectorAll(to_toggle);
+                            if (queries[0].style.display == 'none') {
+                                for (let item of queries) {
+                                    item.style.display = 'block';
+                                }
+                            }
+                            else {
+                                for (let item of queries) {
+                                    item.style.display = 'none';
+                                }
+                            }
+                        }
+                    }
+                    do_toggling('input.queries', '.answer-item .query');
+                    do_toggling('input.tables', '.table-data-container');
+
+                })();
+            </script>
+        </div>
+
+
+    </body>
+
+</html>
